@@ -16,7 +16,7 @@ SOH.SubTotal
 ),
 FilteredSales AS (
     SELECT CustomerID,
-    COUNT(DISTINCT CASE WHEN SubTotal > 2000 THEN SalesOrderID END) *  100.00 / COUNT(SalesOrderID)[HighValueOrdersPct],
+    COUNT(DISTINCT CASE WHEN SubTotal > 2000 THEN SalesOrderID END) *  100.00 / COUNT(DISTINCT SalesOrderID)[HighValueOrdersPct],
     SUM(LineTotal)[TotalSpent],
     MAX(OrderDate)[ZamowienieOstatnie],
     COUNT(DISTINCT SalesOrderID)[TotalOrdersCount],
