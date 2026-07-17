@@ -14,7 +14,7 @@ SOH.SubTotal
     JOIN SalesLT.Product AS P ON P.ProductID=SOD.ProductID
     WHERE SOH.Status = 5
 ),
-FilteredSales AS (
+CustomerAggregates AS (
     SELECT CustomerID,
     COUNT(DISTINCT CASE WHEN SubTotal > 2000 THEN SalesOrderID END) *  100.00 / COUNT(DISTINCT SalesOrderID)[HighValueOrdersPct],
     SUM(LineTotal)[TotalSpent],
@@ -39,6 +39,6 @@ TotalSpent,
     FavoriteCategory
 
     
-FROM FilteredSales
+FROM CustomerAggregates
 WHERE TotalSpent > 5000
 ORDER BY TotalSpent DESC
