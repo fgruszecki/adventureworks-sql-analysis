@@ -15,7 +15,7 @@ To isolate top-tier accounts for targeted marketing or VIP programs, the final o
 
 Results are ordered in descending order by total expenditure to highlight the most valuable customers first.
 ## Structure
-The query utilizes Common Table Expressions (CTEs) for optimal readability and performance:
+The query utilizes Common Table Expressions (CTEs) for optimal readability:
 1. FilteredSales:  Filters active, completed orders and joins header, detail, and product tables.
 2. CustomerAggregates:  Aggregates metrics at the unique customer level and applies conditional logic for category preferences.
 3. Main Select:  Evaluates threshold criteria and formats final outputs.
